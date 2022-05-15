@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container, 
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html#d4e194 -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://JAVA.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>com.maven.pafMonitor</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <url-pattern>/webresources/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MonitorAPI</display-name>
+    <servlet-name>MonitorAPI</servlet-name>
+    <servlet-class>com.maven.pafMonitor.MonitorAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MonitorAPI</servlet-name>
+    <url-pattern>/MonitorAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MonitoringAPI</display-name>
+    <servlet-name>MonitoringAPI</servlet-name>
+    <servlet-class>com.maven.pafMonitor.MonitoringAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MonitoringAPI</servlet-name>
+    <url-pattern>/MonitoringAPI</url-pattern>
+  </servlet-mapping>
+</web-app>
